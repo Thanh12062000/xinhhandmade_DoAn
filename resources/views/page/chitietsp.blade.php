@@ -47,6 +47,7 @@
     <section class="sec-product-detail bg0 p-t-65 p-b-60">
       <div class="container">
         <div class="row">
+        @foreach($sanpham as $sp)
           <div class="col-md-6 col-lg-7 p-b-30">
             <div class="p-l-25 p-r-30 p-lr-0-lg">
               <div class="wrap-slick3 flex-sb flex-w">
@@ -56,8 +57,8 @@
                 <div class="slick3 gallery-lb">
                   <div class="item-slick3" data-thumb="images/vongtay-02.jpg">
                     <div class="wrap-pic-w pos-relative">
-                      <img src="images/vongtay-02.jpg" alt="IMG-PRODUCT" />
-
+                      <div>{{$sp->tensp}}</div>
+                      <img src="{{$sp->ImageLink}}.jpg" alt="IMG-PRODUCT" />
                       <a
                         class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
                         href="images/product-detail-01.jpg"
@@ -65,46 +66,20 @@
                         <i class="fa fa-expand"></i>
                       </a>
                     </div>
-                  </div>
-
-                  <div class="item-slick3" data-thumb="images/dungcu-01.jpg">
-                    <div class="wrap-pic-w pos-relative">
-                      <img src="images/dungcu-01.jpg" alt="IMG-PRODUCT" />
-
-                      <a
-                        class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                        href="images/product-detail-02.jpg"
-                      >
-                        <i class="fa fa-expand"></i>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="item-slick3" data-thumb="images/vongtay-04.jpg">
-                    <div class="wrap-pic-w pos-relative">
-                      <img src="images/vongtay-04.jpg" alt="IMG-PRODUCT" />
-
-                      <a
-                        class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                        href="images/product-detail-03.jpg"
-                      >
-                        <i class="fa fa-expand"></i>
-                      </a>
-                    </div>
-                  </div>
+                  </div>  
                 </div>
               </div>
             </div>
           </div>
-
+        
           <div class="col-md-6 col-lg-5 p-b-30">
             <div class="p-r-50 p-t-5 p-lr-0-lg">
               <h4 class="mtext-105 cl2 js-name-detail p-b-14">
-                Vòng đeo tay HandMade
+                {{$sp->tensp}}
               </h4>
 
               <span class="mtext-106 cl2">
-                $35.50
+                {{$sp->giakm}}
               </span>
 
               <p class="stext-102 cl3 p-t-23">
@@ -206,6 +181,7 @@
               </div>
             </div>
           </div>
+          @endforeach
         </div>
 
        

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\sanpham;
 use App\danhmucsanpham;
-
+//use App\Http\Request;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -26,11 +26,21 @@ class PageController extends Controller
     	return view('page.SanPham',compact ('sp','vt','th','len','dc'));
     }
     public function getSearch(Request $req){
+
         $sanpham= sanpham::where('tensp','like','%'.$req->keyyy.'%')
                                 ->orwhere('giakm',$req->keyyy)
                                 ->get();
         return view('page.search',compact('sanpham'));
 
     }
-    
+    public function getChitiet($id){
+        $sanpham=sanpham::where('id',$id)->first();
+    	return view('page.chitietsp',compact ('sanpham'));
+    }
+    public function getURL(Request $req){
+        return $req->path();
+    }
+    public function postform(Request $req){
+        echo $req->HoTen;
+    }
 }

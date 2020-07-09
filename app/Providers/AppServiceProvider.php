@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use App\danhmucsanpham;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // view()::composer('header',function ($view)){
+        //     $
+        // }
     }
 }

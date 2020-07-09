@@ -96,7 +96,8 @@
        
             <div class="dis-none panel-search w-full p-t-10 p-b-15">
               <div class="bor8 dis-flex p-l-15">
-              <form action="/" method="get">
+                <form action="{{route('search')}}" method="get">
+                @csrf
                 <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04" type ="submit">
                   <i class="zmdi zmdi-search"></i>
                 </button>
@@ -237,7 +238,7 @@
               <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l">
                   <a
-                    href="product-detail.html"
+                    href="chitietsp/{{$v->id}}"
                     class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"
                   >
                     {{$v->tensp}}

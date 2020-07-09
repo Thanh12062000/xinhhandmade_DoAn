@@ -28,3 +28,14 @@ Route::get('source/search',[
 	'as' => 'search',
 	'uses'=> 'PageController@getSearch'
 ]);
+Route::get('source/chitietsp/{id}',[
+	'as' => 'chitiet',
+	'uses'=> 'PageController@getChitiet'
+]);
+Route::get('test',function(){
+	return view('page.test');
+} );
+Route::post('postForm',[
+	'as' => 'post',
+	'uses'=> 'PageController@postform'
+]);
