@@ -13,29 +13,61 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('source/home-02',[
+// Route::get('/', function () {
+//     return view('page.trangchu');
+// });
+Route::get('/',[
 	'as' => 'trang chu',
 	'uses'=> 'PageController@getIndex'
 ]);
-Route::get('source/product',[
+Route::get('home',[
+	'as' => 'trang chu',
+	'uses'=> 'PageController@getIndex'
+]);
+Route::get('product',[
 	'as' => 'san pham',
 	'uses'=> 'PageController@getSanPham'
 ]);
-Route::get('source/search',[
+
+Route::get('search',[
 	'as' => 'search',
 	'uses'=> 'PageController@getSearch'
 ]);
-Route::get('source/chitietsp/{id}',[
+Route::get('searchblog',[
+	'as' => 'searchblog',
+	'uses'=> 'PageController@getSearchblog'
+]);
+Route::get('blog',[
+	'as' => 'blog',
+	'uses'=> 'PageController@getBlog'
+]);
+Route::get('chitietsp/{id}',[
 	'as' => 'chitiet',
 	'uses'=> 'PageController@getChitiet'
 ]);
-Route::get('test',function(){
-	return view('page.test');
-} );
+Route::get('chitietblog/{id}',[
+	'as' => 'chitietblog',
+	'uses'=> 'PageController@getChitietblog'
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::post('postForm',[
 	'as' => 'post',
 	'uses'=> 'PageController@postform'
+]);
+Route::get('filter',[
+	'as' => 'filter',
+	'uses'=> 'PageController@getFilster'
 ]);

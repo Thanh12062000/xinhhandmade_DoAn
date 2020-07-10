@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blog Detail</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header class="header-v2">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop trans-03">
+			<div class="wrap-menu-desktop">
+				<nav class="limiter-menu-desktop p-l-45">
+					
+					<!-- Logo desktop -->		
+					<a href="#" class="logo">
+						<img src="images/icons/logo-001.png" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+
+									<a href="home-02.html">Trang chủ</a>
+								
+							</li>
+
+							<li>
+								<a href="product.html">Sản phẩm</a>
+							</li>
+
+							<li class="label1" data-label1="hot">
+								<a href="shoping-cart.html">Giỏ hàng</a>
+							</li>
+
+							<li class="active-menu">
+								<a href="blog.html">Blog</a>
+							</li>
+
+							<li>
+								<a href="loginAdmin.html">Quản trị</a>
+							</li>
+						</ul>
+					</div>	
+
+					<!-- Icon header -->
+					<div class="wrap-icon-header flex-w flex-r-m h-full">
+						<div class="flex-c-m h-full p-r-24">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+								<i class="zmdi zmdi-search"></i>
+							</div>
+						</div>
+						<div class="flex-c-m h-full p-r-count">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 p-r-count">
+							<a href="account.html">	<i class="zmdi zmdi-account"></i></a>
+							</div>
+						</div>
+						<div class="flex-c-m h-full p-l-18 p-r-25 bor5">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+								<i class="zmdi zmdi-shopping-cart"></i>
+							</div>
+						</div>
+							
+						<div class="flex-c-m h-full p-lr-19">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-sidebar">
+								<i class="zmdi zmdi-menu"></i>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>	
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
+				<div class="flex-c-m h-full p-r-10">
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
+						<i class="zmdi zmdi-search"></i>
+					</div>
+				</div>
+
+				<div class="flex-c-m h-full p-lr-10 bor5">
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+						<i class="zmdi zmdi-shopping-cart"></i>
+					</div>
+				</div>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="main-menu-m">
+				<li>
+					<a href="home-02.html">Trang chủ</a>
+					
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+				<li>
+					<a href="product.html">Sản phẩm</a>
+				</li>
+
+				<li class="label1" data-label1="hot">
+					<a href="shoping-cart.html">Giỏ hàng</a>
+				</li>
+
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+
+				<li>
+					<a href="about.html">Quản trị</a>
+				</li>
+
+				
+			</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
+
+
+	<!-- Cart -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">
+					Your Cart
+				</span>
+
+				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
+				</div>
+			</div>
+			
+			<div class="header-cart-content flex-w js-pscroll">
+				<ul class="header-cart-wrapitem w-full">
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/item-cart-01.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								White Shirt Pleat
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $19.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/item-cart-02.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Converse All Star
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $39.00
+							</span>
+						</div>
+					</li>
+
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="images/item-cart-03.jpg" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+								Nixon Porter Leather
+							</a>
+
+							<span class="header-cart-item-info">
+								1 x $17.00
+							</span>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="w-full">
+					<div class="header-cart-total w-full p-tb-40">
+						Total: $75.00
+					</div>
+
+					<div class="header-cart-buttons flex-w w-full">
+						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+							View Cart
+						</a>
+
+						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+							Check Out
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+				Home
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<a href="blog.html" class="stext-109 cl8 hov-cl1 trans-04">
+				Blog
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				8 Inspiring Ways to Wear Dresses in the Winter
+			</span>
+		</div>
+	</div>
+
+
+	<!-- Content page -->
+	<section class="bg0 p-t-52 p-b-20">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-lg-9 p-b-80">
+					<div class="p-r-45 p-r-0-lg">
+						<!--  -->
+						<div class="wrap-pic-w how-pos5-parent">
+							<img src="images/blog-04.jpg" alt="IMG-BLOG">
+
+							<div class="flex-col-c-m size-123 bg9 how-pos5">
+								<span class="ltext-107 cl2 txt-center">
+									22
+								</span>
+
+								<span class="stext-109 cl3 txt-center">
+									Jan 2018
+								</span>
+							</div>
+						</div>
+
+						<div class="p-t-32">
+							<span class="flex-w flex-m stext-111 cl2 p-b-19">
+								<span>
+									<span class="cl4">By</span> Admin  
+									<span class="cl12 m-l-4 m-r-6">|</span>
+								</span>
+
+								<span>
+									22 Jan, 2018
+									<span class="cl12 m-l-4 m-r-6">|</span>
+								</span>
+
+								<span>
+									StreetStyle, Fashion, Couple  
+									<span class="cl12 m-l-4 m-r-6">|</span>
+								</span>
+
+								<span>
+									8 Comments
+								</span>
+							</span>
+
+							<h4 class="ltext-109 cl2 p-b-28">
+								Thiệp handmade ý nghĩa tặng bạn gái trong ngày valentine
+							</h4>
+
+							<p class="stext-117 cl6 p-b-26">
+								“Thiệp” - cái tên nghe có vẻ khá quen thuộc. Chắc chắn là như vậy, vì chúng giúp bạn có thể gửi gắm những lời nhắn nhủ yêu thương đến với những người thân yêu của mình trong những dịp đặc biệt.
+
+								Giờ đây, khi thế giới handmade ngày càng sôi động, bạn có thể chọn cho mình những chiếc thiệp gỗ handmade ý nghĩa để làm những món quà mang phong cách riêng.
+								Một chiếc thiệp gỗ handmade được làm từ đôi tay khéo léo, tỉ mỉ của người thợ. Từng đường nét, hoa văn được chăm chút cẩn thận để  tạo nên những chiếc thiệp độc đáo, mới lạ. Nhìn tấm thiệp bên ngoài có vẻ mộc mạc, đơn sơ nhưng “em” ấy luôn tạo cho bạn một cảm giác gần gũi và không kém phần tinh tế.
+
+							</p>
+
+							<p class="stext-117 cl6 p-b-26">
+								Bạn đang thầm thương trộm nhớ nàng nhưng chưa biết phải thổ lộ như thế nào. Sắp tới, là sinh nhật của người đó, bạn muốn nhân cơ hội này để bày tỏ tình cảm của mình. Nhưng bạn đang rất phân vân không biết phải làm như thế nào. Vì khi đứng trước nàng tim bạn đập nhanh và bạn không thể thốt thành lời.
+								Vậy tại sao không để tấm thiệp handmade của chúng tôi giúp bạn đưa những lời yêu thương ,tâm tư tình cảm mà bạn đã dấu kín bấy lâu nay? Nàng sẽ rung động trước món quà ý nghĩa của bạn cho mà xem.
+
+								Những tấm thiệp được thiết kế theo phong cách vintage với sự kết hợp giữa chất liệu gỗ đẹp mắt và mặt kính mica trong suốt tạo nên một chiếc thiệp vô cùng sắc sảo và thật sang trọng.
+
+								Bạn sẽ cảm thấy hạnh phúc biết nhường nào khi tấm thiệp được nàng trân quý và đặt chúng lên bàn làm việc và nhìn thấy nó mỗi ngày. Tôi chắc chắn hình ảnh của bạn đã xuất hiện trong suy nghĩ của nàng rồi đấy.
+							</p>
+						</div>
+
+						
+						
+					</div>
+				</div>
+
+				<div class="col-md-4 col-lg-3 p-b-80">
+					<div class="side-menu">
+						<div class="bor17 of-hidden pos-relative">
+							<input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search" placeholder="Tìm kiếm">
+
+							<button class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04">
+								<i class="zmdi zmdi-search"></i>
+							</button>
+						</div>
+
+						<div class="p-t-55">
+							<h4 class="mtext-112 cl2 p-b-33">
+								Thể loại
+							</h4>
+
+							<ul>
+								<li class="bor18">
+									<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+										Vòng Tay
+									</a>
+								</li>
+
+								<li class="bor18">
+									<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+										Thiệp
+									</a>
+								</li>
+
+								<li class="bor18">
+									<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+										Len
+									</a>
+								</li>
+
+								<li class="bor18">
+									<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+										Dụng cụ
+									</a>
+								</li>
+
+							</ul>
+						</div>
+
+						
+
+						<div class="p-t-55">
+							<h4 class="mtext-112 cl2 p-b-20">
+								Hoàn thành
+							</h4>
+
+							<ul>
+								<li class="p-b-7">
+									<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+										<span>
+											July 2020
+										</span>
+
+										<span>
+											(9)
+										</span>
+									</a>
+								</li>
+
+								<li class="p-b-7">
+									<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+										<span>
+											June 2020
+										</span>
+
+										<span>
+											(39)
+										</span>
+									</a>
+								</li>
+
+								<li class="p-b-7">
+									<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+										<span>
+											May 2020
+										</span>
+
+										<span>
+											(29)
+										</span>
+									</a>
+								</li>
+
+								<li class="p-b-7">
+									<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+										<span>
+											April  2020
+										</span>
+
+										<span>
+											(35)
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						
+					</div>
+				</div>
+				<a href="blog.html" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10" style="float:right;">
+					Đọc Thêm Các bài viết khác
+					<i class="fa fa-long-arrow-right m-l-9"></i>
+				</a>
+			</div>
+
+		</div>
+	</section>	
+	
+		
+
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						THÔNG TIN LIÊN HỆ
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						Nếu có bất cứ thắc mắc nào, vui lòng gọi đến sdt:0356617171. Hoặc email 18521412@gm.uit.edu.vn. Địa chỉ cửa hàng: Số 8/ đường 120/ phường Tân Phú/ Quận 9/ TP HCM/ Việt Nam
+					</p>
+
+					<div class="p-t-27">
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-instagram"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-pinterest-p"></i>
+						</a>
+					</div>
+				</div>
+
+				
+			</div>
+
+			
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

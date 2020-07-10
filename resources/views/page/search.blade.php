@@ -1,7 +1,7 @@
 @extends('header')
 @section('active_desktop')
   <li >
-      <a href="home-02">Trang chủ</a>
+      <a href="{{URL::asset('home')}}">Trang chủ</a>
   </li>
   <li class="active-menu">
     <a href="product">Sản phẩm</a>
@@ -21,7 +21,7 @@
 @endsection
 @extends('master')
 @section('headerlink')
-<title>Sản phẩm</title>
+<title>Search Sản phẩm</title>
 @endsection
 
 @section('content')
@@ -67,17 +67,7 @@
           </div>
 
           <div class="flex-w flex-c-m m-tb-10">
-            <div
-              class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter"
-            >
-              <i
-                class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"
-              ></i>
-              <i
-                class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"
-              ></i>
-              Filter
-            </div>
+            
 
             <div
               class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search"
@@ -113,112 +103,7 @@
             </div>
          
 
-          <!-- Filter -->
-          <div class="dis-none panel-filter w-full p-t-10">
-            <div
-              class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm"
-            >
-              <div class="filter-col2 p-r-15 p-b-27">
-                <div class="mtext-102 cl2 p-b-15">
-                  Giá
-                </div>
-
-                <ul>
-                  <li class="p-b-6">
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      $0.00 - $50.00
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      $50.00 - $100.00
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      $100.00+
-                    </a>
-                  </li>
-
-                </ul>
-              </div>
-
-              <div class="filter-col3 p-r-15 p-b-27">
-                <div class="mtext-102 cl2 p-b-15">
-                  Màu sắc
-                </div>
-
-                <ul>
-                  <li class="p-b-6">
-                    <span class="fs-15 lh-12 m-r-6" style="color: #222;">
-                      <i class="zmdi zmdi-circle"></i>
-                    </span>
-
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      Đen
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
-                      <i class="zmdi zmdi-circle"></i>
-                    </span>
-
-                    <a
-                      href="#"
-                      class="filter-link stext-106 trans-04 filter-link-active"
-                    >
-                      Xanh biển
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <span class="fs-15 lh-12 m-r-6" style="color: #b3b3b3;">
-                      <i class="zmdi zmdi-circle"></i>
-                    </span>
-
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      Xám
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
-                      <i class="zmdi zmdi-circle"></i>
-                    </span>
-
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      Xanh lá
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <span class="fs-15 lh-12 m-r-6" style="color: #fa4251;">
-                      <i class="zmdi zmdi-circle"></i>
-                    </span>
-
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      Đỏ
-                    </a>
-                  </li>
-
-                  <li class="p-b-6">
-                    <span class="fs-15 lh-12 m-r-6" style="color: #aaa;">
-                      <i class="zmdi zmdi-circle-o"></i>
-                    </span>
-
-                    <a href="#" class="filter-link stext-106 trans-04">
-                     Trắng
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              
-            </div>
-          </div>
+          
         </div>
 <div class="row isotope-grid">
           <!-- ------------- -->
@@ -230,14 +115,11 @@
             <div class="block2">
               <div class="block2-pic hov-img0">
                 <img src="{{$v->ImageLink}}.jpg" alt="IMG-PRODUCT" />
-                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Mua Ngay
-                </a>
               </div>
               <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l">
                   <a
-                    href="product-detail.html"
+                    href="chitietsp/{{$v->id}}"
                     class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"
                   >
                     {{$v->tensp}}

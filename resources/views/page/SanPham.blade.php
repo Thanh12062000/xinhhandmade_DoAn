@@ -1,7 +1,7 @@
 @extends('header')
 @section('active_desktop')
   <li >
-      <a href="home-02">Trang chủ</a>
+      <a href="{{URL::asset('home')}}">Trang chủ</a>
   </li>
   <li class="active-menu">
     <a href="product">Sản phẩm</a>
@@ -67,17 +67,7 @@
           </div>
 
           <div class="flex-w flex-c-m m-tb-10">
-            <div
-              class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter"
-            >
-              <i
-                class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"
-              ></i>
-              <i
-                class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"
-              ></i>
-              Filter
-            </div>
+            
 
             <div
               class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search"
@@ -122,24 +112,25 @@
                 <div class="mtext-102 cl2 p-b-15">
                   Giá
                 </div>
-
+                <form action="{{route('filter')}}" method="get">
+                @csrf
                 <ul>
                   <li class="p-b-6">
-                    <a href="#" class="filter-link stext-106 trans-04">
+                    <button name="1" class="filter-link stext-106 trans-04" type="submit">
                       $0.00 - $50.00
-                    </a>
+                    </button>
                   </li>
 
                   <li class="p-b-6">
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      $50.00 - $100.00
-                    </a>
+                  <button name="2" class="filter-link stext-106 trans-04" type="submit">
+                      $0.00 - $50.00
+                    </button>
                   </li>
 
                   <li class="p-b-6">
-                    <a href="#" class="filter-link stext-106 trans-04">
-                      $100.00+
-                    </a>
+                  <button name="3" class="filter-link stext-106 trans-04" type="submit">
+                      $0.00 - $50.00
+                    </button>
                   </li>
 
                 </ul>
@@ -231,9 +222,6 @@
             <div class="block2">
               <div class="block2-pic hov-img0">
                 <img src="{{$v->ImageLink}}.jpg" alt="IMG-PRODUCT" />
-                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Mua Ngay
-                </a>
               </div>
               <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l">
@@ -281,19 +269,12 @@
               <div class="block2">
                 <div class="block2-pic hov-img0">
                   <img src="{{$t->ImageLink}}.jpg" alt="IMG-PRODUCT" />
-
-                  <a
-                    href="#"
-                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
-                  >
-                    Mua Ngay
-                  </a>
                 </div>
 
                 <div class="block2-txt flex-w flex-t p-t-14">
                   <div class="block2-txt-child1 flex-col-l">
                     <a
-                      href="product-detail.html"
+                      href="chitietsp/{{$t->id}}"
                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"
                     >
                       {{$t->tensp}}
@@ -334,15 +315,11 @@
             <div class="block2">
               <div class="block2-pic hov-img0">
                 <img src="{{$l->ImageLink}}.jpg" alt="IMG-PRODUCT" />
-          
-                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Mua Ngay
-                </a>
               </div>
           
               <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l">
-                  <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                  <a href="chitietsp/{{$l->id}}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                   {{$l->tensp}}
                   </a>
           
@@ -371,15 +348,11 @@
             <div class="block2">
               <div class="block2-pic hov-img0">
                 <img src="{{$d->ImageLink}}.jpg" alt="IMG-PRODUCT" />
-
-                <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Mua Ngay
-                </a>
               </div>
 
               <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l">
-                  <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                  <a href="chitietsp/{{$d->id}}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                     {{$d->tensp}}
                   </a>
 

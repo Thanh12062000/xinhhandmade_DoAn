@@ -7,7 +7,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo-001.png" alt="IMG-LOGO">
+						<img src="{{URL::asset('images/icons/logo-001.png')}}" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
