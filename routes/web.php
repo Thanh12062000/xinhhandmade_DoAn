@@ -202,3 +202,8 @@ Route::get('dathang',[
 	'as'=>'dathang',
 	'uses'=>'PageController@getdathang'
 ]);
+Route::post('dathang',[
+	'as'=>'dathang',
+	'uses'=>'PageController@postdathang'
+]);
+

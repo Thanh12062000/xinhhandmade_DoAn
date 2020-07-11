@@ -1,122 +1,129 @@
+@extends('header')
+@section('active_desktop')
+  <li >
+      <a href="{{URL::asset('home')}}">Trang chủ</a>
+  </li>
+  <li >
+    <a href="product">Sản phẩm</a>
+  </li>
+
+  <li class="active-menu" class="label1" data-label1="hot">
+    <a href="shoping-cart.html">Giỏ hàng</a>
+  </li>
+
+  <li>
+    <a href="blog.html">Blog</a>
+  </li>
+
+  <li>
+    <a href="loginAdmin.html">Quản trị</a>
+  </li>
+@endsection
 @extends('master')
+@section('headerlink')
+<title>Sản phẩm</title>
+@endsection
+
 @section('content')
-<div class="inner-header">
-		<div class="container">
-			<div class="pull-left">
-				<h6 class="inner-title">Đặt hàng</h6>
-			</div>
-			<div class="pull-right">
-				<div class="beta-breadcrumb">
-					<a href="index.html">Trang chủ</a> / <span>Đặt hàng</span>
-				</div>
-			</div>
-			<div class="clearfix"></div>
+   	<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+				Trang chủ
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				Thanh toán:
+			</span>
 		</div>
-</div>
-
-<div class="container">
-	<div id="content">
+	</div>
 		
-		<form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
-			<input type="hidden" name="_token" value="{{csrf_token()}}">
-			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
+    <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+						<h4 class="mtext-109 cl2 p-b-30">
+							Nhập thông tin
+						</h4>
+						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
+                        <div class="col-lg-7" style="padding-bottom:120px">
+                                @if(count($errors)>0)
+                                    <div class="alert alert-danger">
+                                        @foreach($errors->all() as $err)
+                                            {{$err}}<br>
+                                        @endforeach
+                                    </div>  
+                                @endif
+                                @if(session('thongbao'))
+                                    <div class="alert alert-success">
+                                        {{session('thongbao')}}
+                                    </div>  
+                                @endif
+                                <form action="dathang" method="POST">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                    <div class="form-group">
+                                        <label>Họ tên</label>
+                                        <input class="form-control" name="name"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sdt</label>
+                                        <input class="form-control" name="sdt" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Id(nếu có)</label>
+                                        <input class="form-control" name="id"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input class="form-control" name="email"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Địa chỉ</label>
+                                        <input class="form-control" name="diachi" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ghi chú</label>
+                                        <input class="form-control" name="ghichu"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Hình thức thanh toán</label>
+                                        <select class="form-control" name="hinhthuc">
+                                            <option value="chuyển khoản">Chuyển khoản</option>
+                                            <option value="Tiền mặt">Tiền mặt</option>
+                                        </select>
+                                    </div>
+                                <form>
+                         </div>
+						</div>
+
+						<div class="flex-w flex-t p-t-27 p-b-33">
+							<div class="size-208">
+								<span class="mtext-101 cl2">
+									Tổng tiền:
+								</span>
+							</div>
+                            @if(Session::has('cart'))
+							<div class="size-209 p-t-1">
+								<span class="mtext-110 cl2">
+                                {{number_format(Session('cart')->totalPrice)}} $
+								</span>
+                            </div>
+                            @endif
+						</div>
+
+						<button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+							<div style="color: cornsilk; font-weight: bold; ">Xong</div>
+						</button>
+					</div>
+                </div>
+                
+	<!-- Shoping Cart -->
+	<form class="bg0 p-t-75 p-b-85">
+		<div class="container">
 			<div class="row">
-				<div class="col-sm-6">
-					<h4>Đặt hàng</h4>
-					<div class="space20">&nbsp;</div>
-
-					<div class="form-block">
-						<label for="name">Họ tên*</label>
-						<input type="text" name="name" placeholder="Họ tên" required>
-					</div>
-					<div class="form-block">
-						<label>Giới tính </label>
-						<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
-						<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
-									
-					</div>
-
-					<div class="form-block">
-						<label for="email">Email*</label>
-						<input type="email" id="email" name="email" required placeholder="expample@gmail.com">
-					</div>
-
-					<div class="form-block">
-						<label for="adress">Địa chỉ*</label>
-						<input type="text" id="address" name="address" placeholder="Street Address" required>
-					</div>
-					
-
-					<div class="form-block">
-						<label for="phone">Điện thoại*</label>
-						<input type="text" id="phone" name="phone" required>
-					</div>
-					
-					<div class="form-block">
-						<label for="notes">Ghi chú</label>
-						<textarea id="notes" name="notes"></textarea>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="your-order">
-						<div class="your-order-head"><h5>Đơn hàng của bạn</h5></div>
-						<div class="your-order-body" style="padding: 0px 10px">
-							<div class="your-order-item">
-								<div>
-								@if(Session::has('cart'))
-								@foreach($product_cart as $cart)
-								<!--  one item	 -->
-									<div class="media">
-										<img width="25%" src="source/image/product/{{$cart['item']['image']}}" alt="" class="pull-left">
-										<div class="media-body">
-											<p class="font-large">{{$cart['item']['name']}}</p>
-											<span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price'])}} đồng</span>
-											<span class="color-gray your-order-info">Số lượng: {{$cart['qty']}}</span>
-										</div>
-									</div>
-								<!-- end one item -->
-								@endforeach
-								@endif
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="your-order-item">
-								<div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif đồng</h5></div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="your-order-head"><h5>Hình thức thanh toán</h5></div>
-						
-						<div class="your-order-body">
-							<ul class="payment_methods methods">
-								<li class="payment_method_bacs">
-									<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" checked="checked" data-order_button_text="">
-									<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
-									<div class="payment_box payment_method_bacs" style="display: block;">
-										Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
-									</div>						
-								</li>
-
-								<li class="payment_method_cheque">
-									<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="">
-									<label for="payment_method_cheque">Chuyển khoản </label>
-									<div class="payment_box payment_method_cheque" style="display: none;">
-										Chuyển tiền đến tài khoản sau:
-										<br>- Số tài khoản: 123 456 789
-										<br>- Chủ TK: Nguyễn A
-										<br>- Ngân hàng ACB, Chi nhánh TPHCM
-									</div>						
-								</li>
-								
-							</ul>
-						</div>
-
-						<div class="text-center"><button type="submit" class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
-					</div> <!-- .your-order -->
-				</div>
+            
+				
 			</div>
-		</form>
-	</div> <!-- #content -->
-</div> <!-- .container -->
+		</div>
+	</form>
+		
 @endsection

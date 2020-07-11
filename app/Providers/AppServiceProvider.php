@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         
-        view()->composer(['page.giohang'],function($view){
+        view()->composer(['page.giohang','page.dathang'],function($view){
             if(Session('cart')){
                 $oldCart = Session::get('cart');
                 $cart = new Cart($oldCart);

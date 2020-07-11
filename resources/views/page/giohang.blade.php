@@ -3,11 +3,11 @@
   <li >
       <a href="{{URL::asset('home')}}">Trang chủ</a>
   </li>
-  <li class="active-menu">
+  <li >
     <a href="product">Sản phẩm</a>
   </li>
 
-  <li class="label1" data-label1="hot">
+  <li class="active-menu" class="label1" data-label1="hot">
     <a href="shoping-cart.html">Giỏ hàng</a>
   </li>
 
@@ -111,7 +111,7 @@
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-                                {{number_format(Session('cart')->totalPrice)}} đồng
+                                {{number_format(Session('cart')->totalPrice)}} $
 								</span>
 							</div>
 						</div>
@@ -119,46 +119,15 @@
 						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
 							<div class="size-208 w-full-ssm">
 								<span class="stext-110 cl2">
-									Phí vận chuyển:
+									Bạn muốn đặt hàng:
 								</span>
 							</div>
 
 							<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
 								<p class="stext-111 cl6 p-t-2">
-								Nội thành Tp.HCM: 15k <br>
-								Ngoại thành Tp.HCM 20k <br>
-								Ship tỉnh: 30k <br>
-								(Nhận hàng từ 2-3 ngày)
+								Hãy nhấp vào button ở dưới
 								</p>
 								
-								<div class="p-t-15">
-
-									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
-										<select class="js-select2" name="time">
-											<option>Chọn tỉnh/ Tp</option>
-											<option>TP.HCM</option>
-											<option>Đồn Nai</option>
-											<option>An Giang</option>
-											<option>Hà Nội</option>
-											<option>Hà Nội</option>
-											<option>Hà Nội</option>
-											<option>Hà Nội</option>
-											<option>Hà Nội</option>
-										</select>
-										<div class="dropDownSelect2"></div>
-									</div>
-
-									<div class="bor8 bg0 m-b-12">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Quận/ Huyện">
-									</div>
-									
-									<div class="flex-w">
-										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
-										Cập nhật đơn hàng
-										</div>
-									</div>
-										
-								</div>
 							</div>
 						</div>
 
@@ -171,13 +140,13 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-                                {{number_format(Session('cart')->totalPrice)}} đồng
+                                {{number_format(Session('cart')->totalPrice)}} $
 								</span>
 							</div>
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							<a href="form.html", style="color: cornsilk; font-weight: bold; ">Tiến hành thanh toán</a>
+							<a href="{{route('dathang')}}", style="color: cornsilk; font-weight: bold; ">Tiến hành thanh toán</a>
 						</button>
 					</div>
                 </div>

@@ -6,6 +6,8 @@ use App\danhmucsanpham;
 use App\slide;
 use App\blog;
 use App\Cart;
+use App\giaodich;
+use App\donhang;
 use Session;
 //use App\Http\Request;
 use Illuminate\Http\Request;
@@ -92,5 +94,49 @@ class PageController extends Controller
         return redirect()->back();
     }
 
+
+    public function getdathang(){
+        return view('page.dathang');
+    }
+    public function postdathang(Request $req){
+        $this->validate($req,
+        [
+           'sdt'=>'required|integer',
+            'name'=>'required|min:3|max:100',
+            'diachi'=>'required'
+        ],
+        [
+           'sdt.required'=>'Bạn chưa nhập Số điện thoại',
+           'sdt.integer'=>'Số điện thoại không được nhập chữ',
+            'name.required'=>'Bạn chưa nhập Tên',
+            'diachi.required'=>'Bạn chưa nhập địa chỉ',
+            'name.min'=>'Tên sản phẩm phải có độ dài từ 3 đến 100 kí tự',
+            'name.max'=>'Tên sản phẩm phải có độ dài từ 3 đến 100 kí tự'
+        ]);
+
+        $cart = Session::get('cart');
+
+        $giaodich=new giaodich();
+        $giaodich->username=$req->name;
+        $giaodich->userphone=$req->sdt;
+        $giaodich->usermail=$req->email;
+        $giaodich->iduser=$req->id;
+        $giaodich->diachi=$req->diachi;
+        $giaodich->ghichu=$req->ghichu;
+        $giaodich->payment=$req->hinhthuc;
+        $giaodich->save();
+
+        foreach ($cart['items'] as $key => $value) {
+            $d = new donhang;
+            $d->idgiaodich = $giaodich->id;
+            $d->idsanpham = $key;
+            $d->soluong = $value['qty'];
+            $d->save();
+        }
+        Session::forget('cart');
+
+
+        return redirect()->back()->with('thongbao','Thanh toán thành công');
+    }
 
 }
