@@ -5,6 +5,8 @@ use App\sanpham;
 use App\danhmucsanpham;
 use App\slide;
 use App\blog;
+use App\Cart;
+use Session;
 //use App\Http\Request;
 use Illuminate\Http\Request;
 
@@ -65,23 +67,30 @@ class PageController extends Controller
     }
 
 
-
-
-
-
-
-    public function getURL(Request $req){
-        return $req->path();
+    public function getAddtoCart(Request $req,$id){
+        $product =sanpham::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $id);
+        $req->session()->put('cart',$cart);
+        return redirect()->back();
     }
-    public function postform(Request $req){
-        echo $req->HoTen;
+    public function getGiohang(){
+       
+        return view('page.giohang');
     }
-    // public function getFilter(Request $req){
-    //     if ($req->1)
-    //     $sanpham= sanpham::where('tensp','like','%'.$req->keyyy.'%')
-    //                             ->orwhere('giakm',$req->keyyy)
-    //                             ->get();
-        
-    //     return view('page.search',compact('sanpham'));
-    // }
+    public function getDelItemCart($id){
+        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items)>0){
+            Session::put('cart',$cart);
+        }
+        else{
+            Session::forget('cart');
+        }
+        return redirect()->back();
+    }
+
+
 }

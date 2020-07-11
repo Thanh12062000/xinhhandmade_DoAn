@@ -182,3 +182,23 @@ Route::group(['prefix'=>'admin'],function(){
 		]);
 	});
 });
+
+
+Route::get('add-to-cart/{id}',[
+	'as'=>'themgiohang',
+	'uses'=>'PageController@getAddtoCart'
+]);
+
+Route::get('giohang',[
+	'as'=>'giohang',
+	'uses'=>'PageController@getGiohang'
+]);
+
+Route::get('del-cart/{id}',[
+	'as'=>'xoagiohang',
+	'uses'=>'PageController@getDelItemCart'
+]);
+Route::get('dathang',[
+	'as'=>'dathang',
+	'uses'=>'PageController@getdathang'
+]);
