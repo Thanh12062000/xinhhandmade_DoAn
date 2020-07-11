@@ -13,7 +13,7 @@
 </li>
 
 <li>
-	<a href="blog.html">Blog</a>
+	<a href="{{URL::asset('blog')}}">Blog</a>
 </li>
 
 <li>

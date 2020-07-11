@@ -85,9 +85,7 @@
                 </span>
 
                 <p class="stext-102 cl3 p-t-23">
-                    Vòng đeo tay được làm bằng các dụng cụ tái chế, thân thiện với
-                    môi trường, với nhiều mẫu mã, kiểu dáng khác nhau cho bạn dễ
-                    dàng lựa chọn.
+                    {{$sanpham->mota}}
                 </p>
 
                 <!--  -->

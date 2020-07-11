@@ -13,4 +13,6 @@ class sanpham extends Model
     public function Donhang(){
     	return $this->hasmany('app\donhang','id-sp','id');
     }
+   
+    
 }
